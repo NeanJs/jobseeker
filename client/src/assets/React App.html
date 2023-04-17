@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <script defer="" src="./React App_files/bundle.js"></script><style>@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap);</style><style>body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/*
+! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
+*/
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: currentColor; /* 2 */
+}
+::before,
+::after {
+  --tw-content: '';
+}
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+*/
+html {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */ /* 3 */
+  tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+}
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+/*
+Remove the default font size and weight for headings.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+/*
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+/*
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+:-moz-focusring {
+  outline: auto;
+}
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+legend {
+  padding: 0;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/*
+Prevent resizing textareas horizontally by default.
+*/
+textarea {
+  resize: vertical;
+}
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+/*
+Set the default cursor for buttons.
+*/
+button,
+[role="button"] {
+  cursor: pointer;
+}
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden] {
+  display: none;
+}
+*, ::before, ::after{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+::backdrop{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+.fixed{
+  position: fixed;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.right-0{
+  right: 0px;
+}
+.bottom-0{
+  bottom: 0px;
+}
+.bottom-\[100\%\]{
+  bottom: 100%;
+}
+.-bottom-\[100\%\]{
+  bottom: -100%;
+}
+.-bottom-\[0\%\]{
+  bottom: -0%;
+}
+.z-10{
+  z-index: 10;
+}
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+.flex{
+  display: flex;
+}
+.grid{
+  display: grid;
+}
+.hidden{
+  display: none;
+}
+.h-full{
+  height: 100%;
+}
+.h-fit{
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.h-10{
+  height: 2.5rem;
+}
+.h-\[50vh\]{
+  height: 50vh;
+}
+.h-screen{
+  height: 100vh;
+}
+.h-\[30vh\]{
+  height: 30vh;
+}
+.min-h-screen{
+  min-height: 100vh;
+}
+.w-screen{
+  width: 100vw;
+}
+.w-4\/5{
+  width: 80%;
+}
+.w-full{
+  width: 100%;
+}
+.w-10{
+  width: 2.5rem;
+}
+.w-fit{
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.w-3\/4{
+  width: 75%;
+}
+.w-2\/4{
+  width: 50%;
+}
+.w-3\/5{
+  width: 60%;
+}
+.w-2\/5{
+  width: 40%;
+}
+.flex-\[0\.2\]{
+  flex: 0.2 1;
+}
+.flex-\[0\.8\]{
+  flex: 0.8 1;
+}
+.flex-1{
+  flex: 1 1;
+}
+.grow{
+  flex-grow: 1;
+}
+.translate-y-5{
+  --tw-translate-y: 1.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-x-5{
+  --tw-translate-x: -1.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-10{
+  --tw-translate-y: 2.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-x-5{
+  --tw-translate-x: 1.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-col{
+  flex-direction: column;
+}
+.place-items-center{
+  place-items: center;
+}
+.items-start{
+  align-items: flex-start;
+}
+.items-center{
+  align-items: center;
+}
+.justify-start{
+  justify-content: flex-start;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.gap-4{
+  gap: 1rem;
+}
+.gap-2{
+  gap: 0.5rem;
+}
+.gap-20{
+  gap: 5rem;
+}
+.gap-12{
+  gap: 3rem;
+}
+.gap-5{
+  gap: 1.25rem;
+}
+.gap-3{
+  gap: 0.75rem;
+}
+.gap-16{
+  gap: 4rem;
+}
+.gap-10{
+  gap: 2.5rem;
+}
+.rounded{
+  border-radius: 0.25rem;
+}
+.rounded-full{
+  border-radius: 9999px;
+}
+.rounded-md{
+  border-radius: 0.375rem;
+}
+.border-2{
+  border-width: 2px;
+}
+.border-prime{
+  --tw-border-opacity: 1;
+  border-color: rgb(69 63 224 / var(--tw-border-opacity));
+}
+.border-gray{
+  --tw-border-opacity: 1;
+  border-color: rgb(131 126 119 / var(--tw-border-opacity));
+}
+.border-red-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+.border-transparent{
+  border-color: transparent;
+}
+.border-black{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+.bg-global{
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 252 / var(--tw-bg-opacity));
+}
+.bg-prime{
+  --tw-bg-opacity: 1;
+  background-color: rgb(69 63 224 / var(--tw-bg-opacity));
+}
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-cream{
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 240 248 / var(--tw-bg-opacity));
+}
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-gray{
+  --tw-bg-opacity: 1;
+  background-color: rgb(131 126 119 / var(--tw-bg-opacity));
+}
+.bg-slate-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+.bg-peach{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 221 199 / var(--tw-bg-opacity));
+}
+.p-4{
+  padding: 1rem;
+}
+.p-5{
+  padding: 1.25rem;
+}
+.p-2{
+  padding: 0.5rem;
+}
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.py-1{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.text-center{
+  text-align: center;
+}
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.font-semibold{
+  font-weight: 600;
+}
+.font-bold{
+  font-weight: 700;
+}
+.font-extrabold{
+  font-weight: 800;
+}
+.font-normal{
+  font-weight: 400;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.leading-relaxed{
+  line-height: 1.625;
+}
+.tracking-wide{
+  letter-spacing: 0.025em;
+}
+.tracking-wider{
+  letter-spacing: 0.05em;
+}
+.text-prime{
+  --tw-text-opacity: 1;
+  color: rgb(69 63 224 / var(--tw-text-opacity));
+}
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-gray{
+  --tw-text-opacity: 1;
+  color: rgb(131 126 119 / var(--tw-text-opacity));
+}
+.shadow-2xl{
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.drop-shadow-lg{
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.drop-shadow-md{
+  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.duration-300{
+  transition-duration: 300ms;
+}
+
+.job-field{
+  display: flex;
+  align-items: center;
+  gap:6px;
+  padding:4px 2px;
+}
+.line{
+  content: "";
+  width: 1px;
+  height: 30px;
+  background-color: rgba(0,0,0,.09);
+}
+input{
+  outline: none;
+}
+.navbar{
+  transition: transform .4s ease;
+}
+.navbar.slide{
+  transform: translateX(200%);
+}
+.hover\:border-black:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+.hover\:bg-white:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.hover\:bg-prime:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(69 63 224 / var(--tw-bg-opacity));
+}
+.hover\:bg-transparent:hover{
+  background-color: transparent;
+}
+.hover\:text-prime:hover{
+  --tw-text-opacity: 1;
+  color: rgb(69 63 224 / var(--tw-text-opacity));
+}
+.hover\:text-white:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.hover\:text-black:hover{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.hover\:shadow-lg:hover{
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+@media (min-width: 768px){
+  .md\:m-0{
+    margin: 0px;
+  }
+  .md\:flex{
+    display: flex;
+  }
+  .md\:w-fit{
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .md\:w-4\/5{
+    width: 80%;
+  }
+  .md\:w-3\/5{
+    width: 60%;
+  }
+  .md\:w-2\/5{
+    width: 40%;
+  }
+  .md\:w-96{
+    width: 24rem;
+  }
+  .md\:w-\[200px\]{
+    width: 200px;
+  }
+  .md\:w-\[400px\]{
+    width: 400px;
+  }
+  .md\:max-w-4xl{
+    max-width: 56rem;
+  }
+  .md\:max-w-7xl{
+    max-width: 80rem;
+  }
+  .md\:flex-\[0\.2\]{
+    flex: 0.2 1;
+  }
+  .md\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .md\:flex-row{
+    flex-direction: row;
+  }
+  .md\:items-center{
+    align-items: center;
+  }
+  .md\:gap-6{
+    gap: 1.5rem;
+  }
+  .md\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .md\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .md\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .md\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .md\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .md\:text-8xl{
+    font-size: 6rem;
+    line-height: 1;
+  }
+  .md\:text-6xl{
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+  .md\:text-7xl{
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+@media (min-width: 1024px){
+  .lg\:relative{
+    position: relative;
+  }
+  .lg\:hidden{
+    display: none;
+  }
+  .lg\:flex-\[0\.75\]{
+    flex: 0.75 1;
+  }
+  .lg\:flex-\[0\.25\]{
+    flex: 0.25 1;
+  }
+  .lg\:translate-x-0{
+    --tw-translate-x: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  .lg\:translate-y-0{
+    --tw-translate-y: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  .lg\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .lg\:flex-row{
+    flex-direction: row;
+  }
+  .lg\:items-start{
+    align-items: flex-start;
+  }
+  .lg\:items-center{
+    align-items: center;
+  }
+  .lg\:justify-center{
+    justify-content: center;
+  }
+  .lg\:justify-between{
+    justify-content: space-between;
+  }
+  .lg\:justify-around{
+    justify-content: space-around;
+  }
+  .lg\:gap-0{
+    gap: 0px;
+  }
+  .lg\:gap-8{
+    gap: 2rem;
+  }
+  .lg\:bg-transparent{
+    background-color: transparent;
+  }
+  .lg\:py-12{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .lg\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .lg\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .lg\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .lg\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .lg\:shadow-none{
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9pbmRleC5jc3MiLCI8bm8gc291cmNlPiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLFNBQVM7RUFDVCxrQ0FBa0M7RUFDbEMsbUNBQW1DO0VBQ25DLGtDQUFrQztBQUNwQzs7QUFFQTtFQUNFO2FBQ1c7QUFDYjtBQUNBOztDQUFjO0FBQWQ7OztDQUFjO0FBQWQ7OztFQUFBLHNCQUFjLEVBQWQsTUFBYztFQUFkLGVBQWMsRUFBZCxNQUFjO0VBQWQsbUJBQWMsRUFBZCxNQUFjO0VBQWQsMEJBQWMsRUFBZCxNQUFjO0FBQUE7QUFBZDs7RUFBQSxnQkFBYztBQUFBO0FBQWQ7Ozs7OztDQUFjO0FBQWQ7RUFBQSxnQkFBYyxFQUFkLE1BQWM7RUFBZCw4QkFBYyxFQUFkLE1BQWMsRUFBZCxNQUFjO0VBQWQsV0FBYyxFQUFkLE1BQWM7RUFBZCw0TkFBYyxFQUFkLE1BQWM7RUFBZCw2QkFBYyxFQUFkLE1BQWM7QUFBQTtBQUFkOzs7Q0FBYztBQUFkO0VBQUEsU0FBYyxFQUFkLE1BQWM7RUFBZCxvQkFBYyxFQUFkLE1BQWM7QUFBQTtBQUFkOzs7O0NBQWM7QUFBZDtFQUFBLFNBQWMsRUFBZCxNQUFjO0VBQWQsY0FBYyxFQUFkLE1BQWM7RUFBZCxxQkFBYyxFQUFkLE1BQWM7QUFBQTtBQUFkOztDQUFjO0FBQWQ7RUFBQSx5Q0FBYztVQUFkLGlDQUFjO0FBQUE7QUFBZDs7Q0FBYztBQUFkOzs7Ozs7RUFBQSxrQkFBYztFQUFkLG9CQUFjO0FBQUE7QUFBZDs7Q0FBYztBQUFkO0VBQUEsY0FBYztFQUFkLHdCQUFjO0FBQUE7QUFBZDs7Q0FBYztBQUFkOztFQUFBLG1CQUFjO0FBQUE7QUFBZDs7O0NBQWM7QUFBZDs7OztFQUFBLCtHQUFjLEVBQWQsTUFBYztFQUFkLGNBQWMsRUFBZCxNQUFjO0FBQUE7QUFBZDs7Q0FBYztBQUFkO0VBQUEsY0FBYztBQUFBO0FBQWQ7O0NBQWM7QUFBZDs7RUFBQSxjQUFjO0VBQWQsY0FBYztFQUFkLGtCQUFjO0VBQWQsd0JBQWM7QUFBQTtBQUFkO0VBQUEsZUFBYztBQUFBO0FBQWQ7RUFBQSxXQUFjO0FBQUE7QUFBZDs7OztDQUFjO0FBQWQ7RUFBQSxjQUFjLEVBQWQsTUFBYztFQUFkLHFCQUFjLEVBQWQsTUFBYztFQUFkLHlCQUFjLEVBQWQsTUFBYztBQUFBO0FBQWQ7Ozs7Q0FBYztBQUFkOzs7OztFQUFBLG9CQUFjLEVBQWQsTUFBYztFQUFkLGVBQWMsRUFBZCxNQUFjO0VBQWQsb0JBQWMsRUFBZCxNQUFjO0VBQWQsb0JBQWMsRUFBZCxNQUFjO0VBQWQsY0FBYyxFQUFkLE1BQWM7RUFBZCxTQUFjLEVBQWQsTUFBYztFQUFkLFVBQWMsRUFBZCxNQUFjO0FBQUE7QUFBZDs7Q0FBYztBQUFkOztFQUFBLG9CQUFjO0FBQUE7QUFBZDs7O0NBQWM7QUFBZDs7OztFQUFBLDBCQUFjLEVBQWQsTUFBYztFQUFkLDZCQUFjLEVBQWQsTUFBYztFQUFkLHNCQUFjLEVBQWQsTUFBYztBQUFBO0FBQWQ7O0NBQWM7QUFBZDtFQUFBLGFBQWM7QUFBQTtBQUFkOztDQUFjO0FBQWQ7RUFBQSxnQkFBYztBQUFBO0FBQWQ7O0NBQWM7QUFBZDtFQUFBLHdCQUFjO0FBQUE7QUFBZDs7Q0FBYztBQUFkOztFQUFBLFlBQWM7QUFBQTtBQUFkOzs7Q0FBYztBQUFkO0VBQUEsNkJBQWMsRUFBZCxNQUFjO0VBQWQsb0JBQWMsRUFBZCxNQUFjO0FBQUE7QUFBZDs7Q0FBYztBQUFkO0VBQUEsd0JBQWM7QUFBQTtBQUFkOzs7Q0FBYztBQUFkO0VBQUEsMEJBQWMsRUFBZCxNQUFjO0VBQWQsYUFBYyxFQUFkLE1BQWM7QUFBQTtBQUFkOztDQUFjO0FBQWQ7RUFBQSxrQkFBYztBQUFBO0FBQWQ7O0NBQWM7QUFBZDs7Ozs7Ozs7Ozs7OztFQUFBLFNBQWM7QUFBQTtBQUFkO0VBQUEsU0FBYztFQUFkLFVBQWM7QUFBQTtBQUFkO0VBQUEsVUFBYztBQUFBO0FBQWQ7OztFQUFBLGdCQUFjO0VBQWQsU0FBYztFQUFkLFVBQWM7QUFBQTtBQUFkOztD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bkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQSx5QkFBbUI7RUFBbkI7QUFBbUI7QUFBbkI7RUFBQSwwQkFBbUI7RUFBbkI7QUFBbUI7QUFBbkI7RUFBQSx3QkFBbUI7RUFBbkI7QUFBbUI7QUFBbkI7RUFBQSx5QkFBbUI7RUFBbkI7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBLHNCQUFtQjtFQUFuQjtBQUFtQjtBQUFuQjtFQUFBLHNCQUFtQjtFQUFuQjtBQUFtQjtBQUFuQjtFQUFBLHNCQUFtQjtFQUFuQjtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUEsc0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsa0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsa0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsa0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsa0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsa0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsa0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsa0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsa0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUEsa0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsbUJBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEscUJBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsaUJBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsbUJBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsb0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsb0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQSxtQkFBbUI7RUFBbkI7QUFBbUI7QUFBbkI7RUFBQSxpQkFBbUI7RUFBbkI7QUFBbUI7QUFBbkI7RUFBQSxrQkFBbUI7RUFBbkI7QUFBbUI7QUFBbkI7RUFBQSxtQkFBbUI7RUFBbkI7QUFBbUI7QUFBbkI7RUFBQSxrQkFBbUI7RUFBbkI7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUE7QUFBbUI7QUFBbkI7RUFBQTtBQUFtQjtBQUFuQjtFQUFBO0FBQW1CO0FBQW5CO0VBQUEsb0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsb0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsb0JBQW1CO0VBQW5CO0FBQW1CO0FBQW5CO0VBQUEsZ0RBQW1CO0VBQW5CLDZEQUFtQjtFQUFuQjtBQUFtQjtBQUFuQjtFQUFBLG1HQUFtQjtFQUFuQjtBQUFtQjtBQUFuQjtFQUFBLG1HQUFtQjtFQUFuQjtBQUFtQjtBQUFuQjtFQUFBO0FBQW1COztBQUVuQjtFQUNFLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsT0FBTztFQUNQLGVBQWU7QUFDakI7QUFDQTtFQUNFLFdBQVc7RUFDWCxVQUFVO0VBQ1YsWUFBWTtFQUNaLGlDQUFpQztBQUNuQztBQUNBO0VBQ0UsYUFBYTtBQUNmO0FBQ0E7RUFDRSw4QkFBOEI7QUFDaEM7QUFDQTtFQUNFLDJCQUEyQjtBQUM3QjtBQXBDQTtFQUFBLHVCQ0FBO0VEQUE7Q0NBQTtBREFBO0VBQUEsbUJDQUE7RURBQTtDQ0FBO0FEQUE7RUFBQSxtQkNBQTtFREFBO0NDQUE7QURBQTtFQUFBO0NDQUE7QURBQTtFQUFBLHFCQ0FBO0VEQUE7Q0NBQTtBREFBO0VBQUEscUJDQUE7RURBQTtDQ0FBO0FEQUE7RUFBQSxxQkNBQTtFREFBO0NDQUE7QURBQTtFQUFBLGdGQ0FBO0VEQUEsb0dDQUE7RURBQTtDQ0FBO0FEQUE7RUFBQTtJQUFBO0dDQUE7RURBQTtJQUFBO0dDQUE7RURBQTtJQUFBLHdCQ0FBO0lEQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUEsbUJDQUE7SURBQTtHQ0FBO0VEQUE7SUFBQSxrQkNBQTtJREFBO0dDQUE7RURBQTtJQUFBLG1CQ0FBO0lEQUE7R0NBQTtFREFBO0lBQUEsb0JDQUE7SURBQTtHQ0FBO0VEQUE7SUFBQSxnQkNBQTtJREFBO0dDQUE7RURBQTtJQUFBLGdCQ0FBO0lEQUE7R0NBQTtFREFBO0lBQUEsbUJDQUE7SURBQTtHQ0FBO0VEQUE7SUFBQSxrQkNBQTtJREFBO0dDQUE7Q0FBQTtBREFBO0VBQUE7SUFBQTtHQ0FBO0VEQUE7SUFBQTtHQ0FBO0VEQUE7SUFBQTtHQ0FBO0VEQUE7SUFBQTtHQ0FBO0VEQUE7SUFBQSxzQkNBQTtJREFBO0dDQUE7RURBQTtJQUFBLHNCQ0FBO0lEQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUE7R0NBQTtFREFBO0lBQUEsa0JDQUE7SURBQTtHQ0FBO0VEQUE7SUFBQSxnQkNBQTtJREFBO0dDQUE7RURBQTtJQUFBLG1CQ0FBO0lEQUE7R0NBQTtFREFBO0lBQUEsbUJDQUE7SURBQTtHQ0FBO0VEQUE7SUFBQSxrQkNBQTtJREFBO0dDQUE7RURBQTtJQUFBLHVCQ0FBO0lEQUEsK0JDQUE7SURBQTtHQ0FBO0NBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1Qb3BwaW5zOndnaHRANDAwOzUwMCZkaXNwbGF5PXN3YXAnKTtcbmJvZHkge1xuICBtYXJnaW46IDA7XG4gIGZvbnQtZmFtaWx5OiAnUG9wcGlucycsIHNhbnMtc2VyaWY7XG4gIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6IGFudGlhbGlhc2VkO1xuICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xufVxuXG5jb2RlIHtcbiAgZm9udC1mYW1pbHk6IHNvdXJjZS1jb2RlLXBybywgTWVubG8sIE1vbmFjbywgQ29uc29sYXMsICdDb3VyaWVyIE5ldycsXG4gICAgbW9ub3NwYWNlO1xufVxuQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7XG5cbi5qb2ItZmllbGR7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGdhcDo2cHg7XG4gIHBhZGRpbmc6NHB4IDJweDtcbn1cbi5saW5le1xuICBjb250ZW50OiBcIlwiO1xuICB3aWR0aDogMXB4O1xuICBoZWlnaHQ6IDMwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsLjA5KTtcbn1cbmlucHV0e1xuICBvdXRsaW5lOiBub25lO1xufVxuLm5hdmJhcntcbiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIC40cyBlYXNlO1xufVxuLm5hdmJhci5zbGlkZXtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDIwMCUpO1xufSIsbnVsbF0sInNvdXJjZVJvb3QiOiIifQ== */</style></head>
+  <body cz-shortcut-listen="true" data-new-gr-c-s-check-loaded="14.1105.0" data-gr-ext-installed="">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="min-h-screen w-screen bg-global  flex felx-col  justify-center"><div class="w-4/5 h-full relative"><div class="w-full h-full py-8 flex justify-between items-center relative navigation"><a class="logo flex-1  md:flex-[0.2] active" href="http://localhost:3000/" aria-current="page">Job Seeker</a><span class="flex lg:hidden z-10 text-2xl cursor-pointer"><span class="toggler bg-white grid place-items-center drop-shadow-lg w-10 h-10 rounded-full"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path></svg></span></span><div class="navbar absolute p-4 right-0 -bottom-[100%] translate-y-5 -translate-x-5 drop-shadow-md rounded-md bg-white  lg:shadow-none lg:bg-transparent lg:relative flex flex-col flex-[0.8] items-start gap-4 lg:translate-x-0 lg:translate-y-0 lg:gap-0 lg:items-center lg:flex-row"><ul class="navlinks flex flex-col gap-4 lg:justify-center lg:gap-8  lg:flex-[0.75] lg:flex-row "><a class="link hover:text-prime ease duration-300 cursor-pointer active" href="http://localhost:3000/" aria-current="page">Home</a><a class="link hover:text-prime ease duration-300 cursor-pointer" href="http://localhost:3000/jobs">Jobs</a><a class="link hover:text-prime ease duration-300 cursor-pointer" href="http://localhost:3000/companies">Companies</a><a class="link hover:text-prime ease duration-300 cursor-pointer" href="http://localhost:3000/career-tips">Career Tips</a></ul><div class=" btn-container flex gap-2 lg:flex-[0.25] lg:justify-between"><button class="px-4 py-2 text-prime text-sm ease duration-300 border-2 border-prime rounded   hover:bg-prime hover:text-white  w-full">Sign In</button><button class="px-4 py-2 text-prime text-sm ease duration-300 border-2 border-prime rounded   text-white bg-prime hover:text-prime hover:bg-white  w-full">Register</button></div></div></div><div class="home h-full grid place-items-center gap-20 py-10"><div class="w-full h-full flex flex-row justify-between items-center"><div class="home-content h-[50vh] w-full flex flex-col items-start justify-center gap-12"><div class="content-text flex flex-col justify-center items-start gap-5 leading-relaxed"><h1 class="text-xl font-extrabold tracking-wider md:text-7xl">JobSeeker.</h1><div class="text-head w-full flex flex-col text-2xl md:text-4xl font-normal items-start gap-3 "><span>Discover more than</span><span class="text-prime">8000+ jobs</span></div><span class="text-body md:w-3/5 text-gray text-md w-fit grid">Find yourself the jobs of your choice all around the world and that too from your desired location.</span></div><div class="flex flex-col items-start gap-4"><span>Begin Searching:</span><div class="job-finder w-full md:w-fit h-fit rounded flex bg-white md:items-center py-2 px-3 shadow-2xl"><form action="http://localhost:3000/#" class="flex gap-4 w-full flex-col md:flex-row md:gap-6 items-start md:items-center"><div class="job-field w-full"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg><input name="title" class="text-sm" placeholder="Job title or keywords" value=""></div><span class="line hidden md:flex"></span><div class="job-field w-full"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 14c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z"></path><path d="M11.42 21.814a.998.998 0 0 0 1.16 0C12.884 21.599 20.029 16.44 20 10c0-4.411-3.589-8-8-8S4 5.589 4 9.995c-.029 6.445 7.116 11.604 7.42 11.819zM12 4c3.309 0 6 2.691 6 6.005.021 4.438-4.388 8.423-6 9.73-1.611-1.308-6.021-5.294-6-9.735 0-3.309 2.691-6 6-6z"></path></svg><input name="location" class="text-sm" placeholder="Location" value=""></div><button class="px-4 py-2 text-prime text-sm ease duration-300 border-2 border-prime rounded   text-white bg-prime hover:text-prime hover:bg-white  mx-auto w-full md:m-0 md:w-fit">Search</button></form></div><div class="flex flex-row items-center gap-2"><span>Suggestions:</span><div class="flex gap-2"><span class="ease duration-300 px-2 py-1 bg-black text-white border-black hover:bg-transparent border-2  hover:text-black cursor-pointer">Designer</span><span class="ease duration-300 px-2 py-1 bg-black text-white border-black hover:bg-transparent border-2  hover:text-black cursor-pointer">Developer</span><span class="ease duration-300 px-2 py-1 bg-black text-white border-black hover:bg-transparent border-2  hover:text-black cursor-pointer">Affiliate</span></div></div></div></div><img src="./React App_files/nomad.10241078a3ee6ad23b2c7cae43cd3baf.svg" alt="" class="hidden md:flex"></div><div class="w-full h-fit bg-cream flex flex-col lg:justify-around py-8 lg:py-12 gap-10 lg:flex-row "><div class="flex flex-col items-center justify-center gap-4 lg:flex-row "><span class="stats-icon grid place-items-center text-4xl p-5 rounded-md bg-white " style="color: rgb(113, 190, 255);"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span><div class="stats-content flex flex-col items-center text-gray lg:items-start"><span class="text-prime text-3xl font-bold">8k+</span><span class="uppercase text-sm font-semibold">Current Jobs</span></div></div><div class="flex flex-col items-center justify-center gap-4 lg:flex-row "><span class="stats-icon grid place-items-center text-4xl p-5 rounded-md bg-white " style="color: rgb(255, 143, 67);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.5 1h-12l-.5.5v13l.5.5h12l.5-.5v-13l-.5-.5zM7 7.5V13H2V2h5v5.5zm6 5.5H8V8h5v5zm0-6H8V2h5v5z"></path></svg></span><div class="stats-content flex flex-col items-center text-gray lg:items-start"><span class="text-prime text-3xl font-bold">400+</span><span class="uppercase text-sm font-semibold">Startups</span></div></div><div class="flex flex-col items-center justify-center gap-4 lg:flex-row "><span class="stats-icon grid place-items-center text-4xl p-5 rounded-md bg-white " style="color: rgb(222, 114, 232);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M9 13.75c-2.34 0-7 1.17-7 3.5V19h14v-1.75c0-2.33-4.66-3.5-7-3.5zM4.34 17c.84-.58 2.87-1.25 4.66-1.25s3.82.67 4.66 1.25H4.34zM9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7zm7.04 6.81c1.16.84 1.96 1.96 1.96 3.44V19h4v-1.75c0-2.02-3.5-3.17-5.96-3.44zM15 12c1.93 0 3.5-1.57 3.5-3.5S16.93 5 15 5c-.54 0-1.04.13-1.5.35.63.89 1 1.98 1 3.15s-.37 2.26-1 3.15c.46.22.96.35 1.5.35z"></path></svg></span><div class="stats-content flex flex-col items-center text-gray lg:items-start"><span class="text-prime text-3xl font-bold">20k+</span><span class="uppercase text-sm font-semibold">Talents</span></div></div></div><div class="w-full h-full flex flex-col gap-10 flex-start"><div class="category-header"><div class="header-content w-full flex flex-col gap-4 lg:flex-row lg:items-center justify-between"><div class="content-text flex flex-col gap-2"><h1 class="text-head text-2xl lg:text-4xl font-bold">Explore jobs by category</h1><span class="text-body text-gray">Find jobs across different niche</span></div></div></div><div class="category-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8"><a class="bg-white ease duration-300 flex items-start p-4 gap-2 cursor-pointer rounded-md hover:shadow-lg" href="http://localhost:3000/jobs/designanddevelopment"><span class="icon rounded-md p-5 h-full grid place-items-center text-3xl" style="background: rgb(233, 248, 255); color: rgb(69, 169, 255);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.24 11.51l1.57-1.57-3.75-3.75-1.57 1.57-4.14-4.13c-.78-.78-2.05-.78-2.83 0l-1.9 1.9c-.78.78-.78 2.05 0 2.83l4.13 4.13L3 17.25V21h3.75l4.76-4.76 4.13 4.13c.95.95 2.23.6 2.83 0l1.9-1.9c.78-.78.78-2.05 0-2.83l-4.13-4.13zm-7.06-.44L5.04 6.94l1.89-1.9L8.2 6.31 7.02 7.5l1.41 1.41 1.19-1.19 1.45 1.45-1.89 1.9zm7.88 7.89l-4.13-4.13 1.9-1.9 1.45 1.45-1.19 1.19 1.41 1.41 1.19-1.19 1.27 1.27-1.9 1.9zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34c-.47-.47-1.12-.29-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></span><div class="category-data flex flex-col items-start gap-2"><span class="category-title font-bold text-md">Design &amp; Development</span><div class="text-gray text-sm">150 jobs available</div></div></a><a class="bg-white ease duration-300 flex items-start p-4 gap-2 cursor-pointer rounded-md hover:shadow-lg" href="http://localhost:3000/jobs/marketingandcommunication"><span class="icon rounded-md p-5 h-full grid place-items-center text-3xl" style="background: rgb(69, 63, 224); color: rgb(255, 255, 255);"><svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 15 15" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.46968 1.05085C7.64122 1.13475 7.75 1.30904 7.75 1.5V13.5C7.75 13.691 7.64122 13.8653 7.46968 13.9492C7.29813 14.0331 7.09377 14.0119 6.94303 13.8947L3.2213 11H1.5C0.671571 11 0 10.3284 0 9.5V5.5C0 4.67158 0.671573 4 1.5 4H3.2213L6.94303 1.10533C7.09377 0.988085 7.29813 0.966945 7.46968 1.05085ZM6.75 2.52232L3.69983 4.89468C3.61206 4.96294 3.50405 5 3.39286 5H1.5C1.22386 5 1 5.22386 1 5.5V9.5C1 9.77615 1.22386 10 1.5 10H3.39286C3.50405 10 3.61206 10.0371 3.69983 10.1053L6.75 12.4777V2.52232ZM10.2784 3.84804C10.4623 3.72567 10.7106 3.77557 10.833 3.95949C12.2558 6.09798 12.2558 8.90199 10.833 11.0405C10.7106 11.2244 10.4623 11.2743 10.2784 11.1519C10.0944 11.0296 10.0445 10.7813 10.1669 10.5973C11.4111 8.72728 11.4111 6.27269 10.1669 4.40264C10.0445 4.21871 10.0944 3.97041 10.2784 3.84804ZM12.6785 1.43044C12.5356 1.2619 12.2832 1.24104 12.1147 1.38386C11.9462 1.52667 11.9253 1.77908 12.0681 1.94762C14.7773 5.14488 14.7773 9.85513 12.0681 13.0524C11.9253 13.2209 11.9462 13.4733 12.1147 13.6161C12.2832 13.759 12.5356 13.7381 12.6785 13.5696C15.6406 10.0739 15.6406 4.92612 12.6785 1.43044Z" fill="currentColor"></path></svg></span><div class="category-data flex flex-col items-start gap-2"><span class="category-title font-bold text-md">Marketing &amp; Communication</span><div class="text-gray text-sm">150 jobs available</div></div></a><a class="bg-white ease duration-300 flex items-start p-4 gap-2 cursor-pointer rounded-md hover:shadow-lg" href="http://localhost:3000/jobs/digitalmarketing"><span class="icon rounded-md p-5 h-full grid place-items-center text-3xl" style="background: rgb(255, 245, 239); color: rgb(255, 148, 77);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19.875 3H4.125C2.953 3 2 3.897 2 5v14c0 1.103.953 2 2.125 2h15.75C21.047 21 22 20.103 22 19V5c0-1.103-.953-2-2.125-2zm0 16H4.125c-.057 0-.096-.016-.113-.016-.007 0-.011.002-.012.008L3.988 5.046c.007-.01.052-.046.137-.046h15.75c.079.001.122.028.125.008l.012 13.946c-.007.01-.052.046-.137.046z"></path><path d="M6 7h6v6H6zm7 8H6v2h12v-2h-4zm1-4h4v2h-4zm0-4h4v2h-4z"></path></svg></span><div class="category-data flex flex-col items-start gap-2"><span class="category-title font-bold text-md">Digital Marketing</span><div class="text-gray text-sm">150 jobs available</div></div></a><a class="bg-white ease duration-300 flex items-start p-4 gap-2 cursor-pointer rounded-md hover:shadow-lg" href="http://localhost:3000/jobs/businessandconsulting"><span class="icon rounded-md p-5 h-full grid place-items-center text-3xl" style="background: rgb(252, 239, 239); color: rgb(233, 138, 120);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M332.8 320h38.4c6.4 0 12.8-6.4 12.8-12.8V172.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v134.4c0 6.4 6.4 12.8 12.8 12.8zm96 0h38.4c6.4 0 12.8-6.4 12.8-12.8V76.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v230.4c0 6.4 6.4 12.8 12.8 12.8zm-288 0h38.4c6.4 0 12.8-6.4 12.8-12.8v-70.4c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v70.4c0 6.4 6.4 12.8 12.8 12.8zm96 0h38.4c6.4 0 12.8-6.4 12.8-12.8V108.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v198.4c0 6.4 6.4 12.8 12.8 12.8zM496 384H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"></path></svg></span><div class="category-data flex flex-col items-start gap-2"><span class="category-title font-bold text-md">Business &amp; Consulting</span><div class="text-gray text-sm">150 jobs available</div></div></a><a class="bg-white ease duration-300 flex items-start p-4 gap-2 cursor-pointer rounded-md hover:shadow-lg" href="http://localhost:3000/jobs/financemanagement"><span class="icon rounded-md p-5 h-full grid place-items-center text-3xl" style="background: rgb(251, 238, 252); color: rgb(224, 123, 234);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 1c-4.142 0-7.5 3.358-7.5 7.5s3.358 7.5 7.5 7.5c4.142 0 7.5-3.358 7.5-7.5s-3.358-7.5-7.5-7.5zM7.5 14.5c-3.314 0-6-2.686-6-6s2.686-6 6-6c3.314 0 6 2.686 6 6s-2.686 6-6 6zM8 8v-2h2v-1h-2v-1h-1v1h-2v4h2v2h-2v1h2v1h1v-1h2l-0-4h-2zM7 8h-1v-2h1v2zM9 11h-1v-2h1v2z"></path></svg></span><div class="category-data flex flex-col items-start gap-2"><span class="category-title font-bold text-md">Finance Management</span><div class="text-gray text-sm">150 jobs available</div></div></a><a class="bg-white ease duration-300 flex items-start p-4 gap-2 cursor-pointer rounded-md hover:shadow-lg" href="http://localhost:3000/jobs/customerservicecare"><span class="icon rounded-md p-5 h-full grid place-items-center text-3xl" style="background: rgb(238, 252, 245); color: rgb(102, 225, 159);"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path fill-rule="nonzero" d="M17.841 15.659l.176.177.178-.177a2.25 2.25 0 0 1 3.182 3.182l-3.36 3.359-3.358-3.359a2.25 2.25 0 0 1 3.182-3.182zM12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 7.75-7.996L12 14zm0-13c3.315 0 6 2.685 6 6a5.998 5.998 0 0 1-5.775 5.996L12 13c-3.315 0-6-2.685-6-6a5.998 5.998 0 0 1 5.775-5.996L12 1zm0 2C9.79 3 8 4.79 8 7s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path></g></svg></span><div class="category-data flex flex-col items-start gap-2"><span class="category-title font-bold text-md">Customer Service Care</span><div class="text-gray text-sm">150 jobs available</div></div></a></div></div><div class="flex flex-col w-full"><div class="flex flex-col items-start gap-4"><span class="text-2xl lg:text-4xl font-bold undefined">Jobs for you</span><span class="undefined text-gray text-md">Find jobs of your choice</span></div></div><div class="w-full flex flex-col items-center justify-center h-[30vh] bg-cream p-2"><div class="w-full flex flex-col items-start md:w-fit gap-4"><span class="text-head text-2xl md:text-3xl font-semibold">Subscribe to our <span class="text-prime">Newsletter</span></span><div class="flex w-full md:flex-row gap-2 justify-center"><input placeholder="Enter your Email" class="w-full p-2"><button class="px-4 py-2 text-prime text-sm ease duration-300 border-2 border-prime rounded   hover:bg-prime hover:text-white  undefined">Subscribe</button></div></div></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+  div.grammarly-desktop-integration {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+
+  div.grammarly-desktop-integration:before {
+    content: attr(data-content);
+  }
+</style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.job-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 2px;
+}
+.line {
+  content: "";
+  width: 1px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.09);
+}
+input {
+  outline: none;
+}
+.navbar {
+  transition: transform 0.4s ease;
+}
+.navbar.slide {
+  transform: translateX(200%);
+}
+.authform {
+  background-color: white;
+  padding: 10px;
+}
+.auth-fields input:not([type="checkbox"]) {
+  padding: 10px;
+  color: black;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+}
+.auth-fields input::placeholder {
+  color: black;
+}
