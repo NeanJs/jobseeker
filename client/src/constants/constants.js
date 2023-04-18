@@ -15,12 +15,12 @@ const LINKS = [
   },
 
   {
-    path: "/jobs",
+    path: "jobs",
     private: true,
     title: "Jobs",
   },
   {
-    path: "/companies",
+    path: "companies",
     private: true,
     title: "Companies",
   },

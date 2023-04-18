@@ -32,8 +32,9 @@ input {
 .navbar {
   transition: transform 0.4s ease;
 }
-.navbar.slide {
-  transform: translateX(200%);
+.slide {
+  transform: translateX(300%);
+  
 }
 .authform {
   background-color: white;
