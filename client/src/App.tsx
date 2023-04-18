@@ -24,7 +24,7 @@ function App() {
           />
           <Route path="jobs" element={<Jobs />} />
           <Route path="jobs/:id" element={<Result />} />
-          <Route path="/" element={<Navigate to={"/"} replace={true} />} />
+          <Route path="/*" element={<Navigate to={"/"} replace={true} />} />
         </Routes>
         <Footer />
       </div>
