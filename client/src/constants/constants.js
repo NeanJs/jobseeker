@@ -9,7 +9,7 @@ import { RiUserHeartLine as Customer } from "react-icons/ri";
 
 const LINKS = [
   {
-    path: "/",
+    path: "/jobseeker",
     title: "Home",
     private: true,
   },

@@ -18,10 +18,10 @@ function App() {
         {isLoggedIn && <Navbar />}
 
         <Routes>
-          <Route path="/" element={isLoggedIn ? <Home /> : <AuthForm />} />
+          <Route path="/jobseeker" element={isLoggedIn ? <Home /> : <AuthForm />} />
           <Route path="/jobs" element={<Jobs />} />
-          <Route path="jobs/:id" element={<Result />} />
-          <Route path="/*" element={<Navigate to={"/"} replace={true} />} />
+          <Route path="/jobs/:id" element={<Result />} />
+          {/* <Route path="/jobseeker/*" element={<Navigate to={"/"} replace={true} />} /> */}
         </Routes>
         <Footer />
       </div>
