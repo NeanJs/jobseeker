@@ -1,6 +1,7 @@
 import JobFinder from "../../components/JobFinder";
 import JobsCategories from "../Jobs/Categories/JobsCategories";
 import JobData from "./components/JobData";
+//@ts-ignore
 import nomad from "../../assets/nomad.svg";
 import JobSuggestions from "../Jobs/Popular/JobSuggestions";
 import Newsletter from "./components/Newsletter";

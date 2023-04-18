@@ -32,6 +32,11 @@ const authReducer = createSlice({
       state.loading = false;
       state.isLoggedIn = false;
     },
+    logout: (state) => {
+      state.data = {};
+      state.loading = false;
+      state.isLoggedIn = false;
+    },
   },
   // extraReducers: (builder) => {
   //   builder
@@ -50,6 +55,6 @@ const authReducer = createSlice({
   //     });
   // },
 });
-export const { toggleForm, authFailure, authRequest, authSuccess    } =
+export const { toggleForm, authFailure, authRequest, authSuccess,logout } =
   authReducer.actions;
 export default authReducer.reducer;

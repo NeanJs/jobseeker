@@ -1,15 +1,20 @@
+//@ts-ignore
 import { LINKS } from "../constants/constants";
 import Button from "./Button";
 import { NavLink as Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { BiMenuAltLeft, BiMenuAltRight } from "react-icons/bi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../reducers";
 import { RxAvatar } from "react-icons/rx";
+import { logout } from "../reducers/Auth";
 function Navbar() {
   let navigate = useNavigate();
   const [toggle, setToggle] = useState(true);
-  const handleSignIn = () => {};
+  let dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   const handleRegister = () => {};
   const navbar = document.querySelector(".navbar");
   const navigation = document.querySelector(".navigation");
@@ -43,7 +48,7 @@ function Navbar() {
       </span>
       <div className="navbar absolute p-4 right-0 top-[0%] translate-y-5 -translate-x-5 drop-shadow-md rounded-md bg-white  lg:shadow-none lg:bg-transparent lg:relative flex flex-col flex-[0.8] items-start gap-4 lg:translate-x-0 lg:translate-y-0 lg:gap-0 lg:items-center lg:flex-row">
         <ul className="navlinks flex flex-col gap-4 lg:justify-center lg:gap-8  lg:flex-[0.75] lg:flex-row ">
-          {LINKS.map((link, id) => (
+          {LINKS.map((link: { title: string; path: string }, id: number) => (
             <Link
               to={link.path}
               key={`${link.title}-${id}`}
@@ -54,19 +59,18 @@ function Navbar() {
           ))}
         </ul>
         <div className=" btn-container flex gap-2 lg:flex-[0.25] lg:justify-between items-center">
-          <Button text="Find a job" onClick={handleSignIn} className="w-full" />
           <Button
             text="Post a job"
             onClick={handleRegister}
             isPrimary
             className="w-full"
           />
-          <div className="avatar flex text-4xl" onClick={userToggle}>
+          <Button text="Logout" onClick={handleLogout} className="w-full" />
+
+          {/* <div className="avatar flex text-4xl" onClick={userToggle}>
             <RxAvatar />
-          </div>
-          <div>
-            
-          </div>
+          </div>? */}
+          <div></div>
         </div>
       </div>
     </div>
