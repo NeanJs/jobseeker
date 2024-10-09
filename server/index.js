@@ -1,26 +1,29 @@
-import { MongoClient, ServerApiVersion } from "mongodb";
+// server/server.js
+
 import express from "express";
+import connectDB from "./config/db.js";
+import jobRoutes from "./routes/jobRoutes.js";
+import authRoutes from "./routes/authRoutes.js"; // Import auth routes
+import cors from "cors";
 const app = express();
 
-const uri =
-  "mongodb+srv://nean:Nean123@job-seeker.2h9zdym.mongodb.net/?retryWrites=true&w=majority";
+// Connect to MongoDB
+connectDB();
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
+// Middleware
+app.use(cors());
+app.use(express.json()); // To parse JSON request bodies
+// Use the routes
+app.use("/api/jobs", jobRoutes);
+app.use("/api/auth", authRoutes); // Use auth routes
+
+// Example route (you can create your actual routes later)
+app.get("/", (req, res) => {
+  res.send("API is running...");
 });
-const PORT = 5000;
-async function run() {
-  try {
-    await client.connect().then((res) => {
-      console.log(`Server running at ${PORT}`);
-    });
-  } catch (err) {
-    console.log(err);
-  }
-}
-run().catch(console.dir);
+
+// Start the server
+const PORT = 4000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

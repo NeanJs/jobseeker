@@ -8,7 +8,6 @@ import {
   BiMenuAltLeft,
   BiMenuAltRight,
   BiMessage,
-  BiNotification,
 } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../reducers";
@@ -47,7 +46,7 @@ function Navbar() {
       }
     };
   }, [window.scrollY]);
-  const { isLoggedIn } = useSelector((state: RootState) => state.auth);
+  const { isLoggedIn, data } = useSelector((state: RootState) => state.auth);
   return (
     <div
       className={`${
@@ -56,7 +55,10 @@ function Navbar() {
           : "relative"
       }  w-full py-8 flex justify-between items-center navigation ease duration-300`}
     >
-      <Link to={`/`} className="logo text-sm md:text-xl md:flex-1 font-semibold">
+      <Link
+        to={`/`}
+        className="logo text-sm md:text-xl md:flex-1 font-semibold"
+      >
         Job Seeker.
       </Link>
       <div className="flex items-center z-10 text-3xl gap-4 cursor-pointer">
@@ -85,11 +87,17 @@ function Navbar() {
         </div>
         <BiBell />
         <BiMessage />
-        <RxAvatar onClick={userToggle} className="" />
+        <div
+          className="user-section flex gap-2 items-center"
+          onClick={userToggle}
+        >
+          <RxAvatar className="" />
+          <span className="text-sm">{data.user.username}</span>
+        </div>
         <div
           className={`${
             show ? "" : "slide"
-          } absolute top-[100%] -right-0 duration-300 p-2 shadow-2xl flex flex-col items-start gap-2 text-sm w-fit bg-white shadow-lg`}
+          } absolute top-[100%] -right-0 duration-300 p-2 flex flex-col items-start gap-2 text-sm w-fit bg-white shadow-lg`}
         >
           <span className="duration-300 ease hover:text-prime">
             Manage account

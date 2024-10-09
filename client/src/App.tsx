@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -8,6 +8,7 @@ import Home from "./pages/Home/Home";
 import Jobs from "./pages/Jobs/Jobs";
 import Result from "./pages/Jobs/Search/Result";
 import { RootState } from "./reducers";
+import axiosInstance from "./services/axiosInstance";
 
 function App() {
   const { isLoggedIn } = useSelector((state: RootState) => state.auth);
@@ -18,10 +19,7 @@ function App() {
         {isLoggedIn && <Navbar />}
 
         <Routes>
-          <Route
-            path="/"
-            element={isLoggedIn ? <Home /> : <AuthForm />}
-          />
+          <Route path="/" element={isLoggedIn ? <Home /> : <AuthForm />} />
           <Route path="jobs" element={<Jobs />} />
           <Route path="jobs/:id" element={<Result />} />
           <Route path="/*" element={<Navigate to={"/"} replace={true} />} />

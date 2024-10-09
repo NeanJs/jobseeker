@@ -23,9 +23,12 @@ const authReducer = createSlice({
       state.loading = true;
     },
     authSuccess: (state, action) => {
+      console.log(action.payload);
       state.data = action.payload;
       state.loading = false;
-      state.isLoggedIn = true;
+      state.isLoggedIn = Boolean(
+        action.payload?.data?.user || action?.payload?.user
+      );
     },
     authFailure: (state, action) => {
       state.data = action.payload;
@@ -55,6 +58,6 @@ const authReducer = createSlice({
   //     });
   // },
 });
-export const { toggleForm, authFailure, authRequest, authSuccess,logout } =
+export const { toggleForm, authFailure, authRequest, authSuccess, logout } =
   authReducer.actions;
 export default authReducer.reducer;

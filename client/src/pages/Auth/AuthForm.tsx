@@ -5,19 +5,21 @@ import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleForm } from "../../reducers/Auth";
 import { RootState } from "../../reducers/index";
-import { handleSignin } from "../../actions/auth";
+import { handleSignin, handleSignUp } from "../../actions/auth";
+import axios from "axios";
 
 interface initialValues {
   email: string;
   password: string;
-  fullname: string;
+  username: string;
   confirmPassword: string;
 }
+
 function AuthForm() {
   const initialValues = {
     email: "",
     password: "",
-    fullname: "",
+    username: "",
     confirmPassword: "",
   } as initialValues;
 
@@ -38,8 +40,13 @@ function AuthForm() {
           <Formik
             initialValues={initialValues}
             onSubmit={async (values) => {
-              //@ts-ignore
-              dispatch(handleSignin(values));
+              const credentials = {
+                email: values.email,
+                password: values.password,
+              };
+              !isSignup
+                ? dispatch(handleSignin(credentials))
+                : dispatch(handleSignUp(values));
             }}
           >
             <Form className="auth-fields flex flex-col items-center gap-4 w-4/5 h-full justify-center">
@@ -48,7 +55,7 @@ function AuthForm() {
                 {isSignup ? "Sign up" : "Sign in"}
               </span>
               {isSignup && (
-                <Field name="name" type="text" placeholder="Fullname" />
+                <Field name="username" type="text" placeholder="Username" />
               )}
               <Field type="email" name="email" placeholder="Email" />
               <Field type="password" placeholder="Password" name="password" />
