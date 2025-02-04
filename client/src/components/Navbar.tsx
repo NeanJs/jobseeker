@@ -1,42 +1,41 @@
-//@ts-ignore
-import { LINKS } from "../constants/constants";
-import Button from "./Button";
-import { NavLink as Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import {
   BiBell,
   BiMenuAltLeft,
   BiMenuAltRight,
   BiMessage,
 } from "react-icons/bi";
+import { RxAvatar } from "react-icons/rx";
+import { NavLink as Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../reducers";
-import { RxAvatar } from "react-icons/rx";
+import Button from "./Button";
 import { logout } from "../reducers/Auth";
+
 function Navbar() {
-  let navigate = useNavigate();
   const [toggle, setToggle] = useState(false);
   const [show, setShow] = useState(false);
   const [fixed, setFixed] = useState(false);
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { isLoggedIn, data, role } = useSelector(
+    (state: RootState) => state.auth
+  );
+
+  // Handle Logout
   const handleLogout = () => {
     dispatch(logout());
-  };
-  const handleRegister = () => {};
-  const navigation = document.querySelector(".navigation");
-  const userToggle = () => {
-    if (!toggle) {
-      setToggle(true);
-    }
-    setShow(!show);
-  };
-  const handleToggle = () => {
-    if (show) {
-      setShow(false);
-    }
-    setToggle(!toggle);
+    localStorage.removeItem("token");
+    navigate("/");
   };
 
+  // Handle Register (for Employers)
+  const handleRegister = () => {
+    navigate("/post-job");
+  };
+
+  // Handle scroll for fixed navbar
   useEffect(() => {
     window.onscroll = () => {
       if (window.scrollY > 200) {
@@ -46,7 +45,42 @@ function Navbar() {
       }
     };
   }, [window.scrollY]);
-  const { isLoggedIn, data } = useSelector((state: RootState) => state.auth);
+
+  // Toggle the user menu visibility
+  const userToggle = () => {
+    setShow(!show);
+    setToggle(false);
+  };
+
+  // Toggle the navbar menu visibility
+  const handleToggle = () => {
+    setToggle(!toggle);
+    setShow(false);
+  };
+
+  // Role-based navigation links
+  const roleLinks = {
+    user: [
+      { title: "Home", path: "/" },
+      { title: "Jobs", path: "/jobs" },
+      { title: "Companies", path: "/companies" },
+      { title: "Career Tips", path: "/career-tips" },
+    ],
+    employer: [
+      { title: "Dashboard", path: "/dashboard" },
+      { title: "Post a Job", path: "/post-job" },
+      { title: "Manage Jobs", path: "/manage-jobs" },
+    ],
+    admin: [
+      { title: "Admin Dashboard", path: "/admin-dashboard" },
+      { title: "User Management", path: "/admin-users" },
+      { title: "Job Listings Management", path: "/admin-jobs" },
+    ],
+  };
+
+  // Get the links based on the user's role
+  const links = roleLinks[role] || [];
+
   return (
     <div
       className={`${
@@ -68,13 +102,15 @@ function Navbar() {
         >
           {toggle ? <BiMenuAltLeft /> : <BiMenuAltRight />}
         </span>
+
+        {/* Navbar links */}
         <div
           className={`navbar ${
             toggle ? "slide" : ""
           } absolute p-4 top-[100%] drop-shadow-md text-base rounded-md bg-white  lg:shadow-none lg:bg-transparent lg:relative flex flex-col items-start gap-4 lg:translate-x-0 lg:translate-y-0 lg:gap-0 lg:items-center lg:flex-row`}
         >
-          <ul className="navlinks flex flex-col w-full mx-auto gap-2 lg:justify-center lg:gap-8 lg:flex-row ">
-            {LINKS.map((link: { title: string; path: string }, id: number) => (
+          <ul className="navlinks flex flex-col w-full mx-auto gap-2 lg:justify-center lg:gap-8 lg:flex-row">
+            {links.map((link, id) => (
               <Link
                 to={link.path}
                 key={`${link.title}-${id}`}
@@ -85,15 +121,20 @@ function Navbar() {
             ))}
           </ul>
         </div>
+
         <BiBell />
         <BiMessage />
+
+        {/* User menu (Avatar + name) */}
         <div
           className="user-section flex gap-2 items-center"
           onClick={userToggle}
         >
-          <RxAvatar className="" />
+          <RxAvatar />
           <span className="text-sm">{data.user.username}</span>
         </div>
+
+        {/* User menu options */}
         <div
           className={`${
             show ? "" : "slide"
@@ -102,25 +143,17 @@ function Navbar() {
           <span className="duration-300 ease hover:text-prime">
             Manage account
           </span>
-          <Button
-            text="Post a job"
-            onClick={handleRegister}
-            isPrimary
-            className="w-full"
-          />
-
+          {role === "employer" && (
+            <Button
+              text="Post a job"
+              onClick={handleRegister}
+              isPrimary
+              className="w-full"
+            />
+          )}
           <Button text="Logout" onClick={handleLogout} className="w-full" />
         </div>
       </div>
-
-      {/* <div className="btn-container flex gap-1 lg:flex-[0.2] lg:justify-between items-center"> */}
-      {/* <Button
-          text="Post a job"
-          onClick={handleRegister}
-          isPrimary
-          className="w-full"
-        />
-      {/* </div> */}
     </div>
   );
 }

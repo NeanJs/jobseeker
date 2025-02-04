@@ -34,11 +34,16 @@ input {
 }
 .slide {
   transform: translateX(300%);
-  
 }
 .authform {
   background-color: white;
   padding: 10px;
+}
+
+.auth-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .auth-fields input:not([type="checkbox"]) {
   padding: 10px;
@@ -48,4 +53,17 @@ input {
 }
 .auth-fields input::placeholder {
   color: black;
+}
+.auth-fields select {
+  padding: 10px;
+  color: black;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  background-color: white;
+  appearance: none;
+}
+
+.auth-fields select:focus {
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.3);
 }

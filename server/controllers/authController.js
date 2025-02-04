@@ -28,13 +28,18 @@ export const login = async (req, res) => {
   });
   res.status(200).json({
     token,
-    user: { id: user._id, username: user.username, email: user.email },
+    user: {
+      id: user._id,
+      username: user.username,
+      email: user.email,
+      role: user.role,
+    },
   });
 };
 // @desc    Register a new user
 // @route   POST /api/auth/register
 export const register = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, role } = req.body;
 
   // Check if user already exists
   const existingUser = await User.findOne({ email });
@@ -46,7 +51,7 @@ export const register = async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   // Create and save the new user
-  const newUser = new User({ username, email, password: hashedPassword });
+  const newUser = new User({ username, email, password: hashedPassword, role });
   try {
     await newUser.save();
     const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
@@ -60,6 +65,7 @@ export const register = async (req, res) => {
         id: newUser._id,
         username: newUser.username,
         email: newUser.email,
+        role: newUser.role,
       },
     });
   } catch (error) {
