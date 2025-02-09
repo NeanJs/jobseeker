@@ -1,7 +1,7 @@
 import axios from "axios";
 const axiosInstance = axios.create({
   // @ts-ignore
-  baseURL: import.meta.env.VITE_BASER_URL,
+  baseURL: "https://job-seeker-backend-xnuu.onrender.com/api/",
   timeout: 10000,
 });
 export default axiosInstance;
